@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.A. Global Consultants Limited - Excellence in Consulting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0a1628;
+            --navy-dark: #050b14;
+            --sapphire: #1a3a6e;
+            --royal-blue: #2d5a9f;
+            --blue-accent: #4a7fd7;
+            --gold: #d4a574;
+            --gold-light: #e5c49f;
+            --text-primary: #f5f5f5;
+            --text-secondary: #b8c5d6;
+            --border: #1f3a5f;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom cursor */
+        body {
+            cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="6" fill="%23d4a574"/><circle cx="16" cy="16" r="14" fill="none" stroke="%23d4a574" stroke-width="1.5" opacity="0.5"/></svg>') 16 16, auto;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(5, 11, 20, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            position: relative;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 70px;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(74, 127, 215, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: orbitFloat 8s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: orbitFloat 10s ease-in-out infinite reverse;
+            z-index: 0;
+        }
+
+        @keyframes orbitFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-40px) scale(1.1); }
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            text-align: center;
+            z-index: 1;
+            animation: heroEnter 1.2s ease-out;
+        }
+
+        @keyframes heroEnter {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            color: var(--gold);
+            font-size: 1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            animation: fadeInUp 1s ease-out 0.4s both;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--gold-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            color: var(--navy-dark);
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            animation: fadeInUp 1s ease-out 0.8s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(212, 165, 116, 0.4);
+            border-color: var(--gold);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0.3;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            margin-top: 0;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--gold-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleReveal 1s ease-out;
+        }
+
+        @keyframes titleReveal {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            line-height: 1.8;
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        /* Services Section */
+        .services {
+            background: linear-gradient(135deg, rgba(45, 90, 159, 0.05) 0%, rgba(212, 165, 116, 0.03) 100%);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: rgba(26, 58, 110, 0.25);
+            border: 1px solid rgba(212, 165, 116, 0.15);
+            padding: 3rem;
+            border-radius: 12px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light), transparent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(74, 127, 215, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            transition: all 0.6s ease;
+            z-index: 0;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover::after {
+            top: -20%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+        }
+
+        .service-card:hover {
+            border-color: var(--gold);
+            background: rgba(26, 58, 110, 0.4);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(74, 127, 215, 0.15);
+        }
+
+        .service-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about {
+            border-top: 1px solid var(--border);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.9;
+            font-size: 1.05rem;
+            font-weight: 300;
+        }
+
+        .about-highlight {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        .about-visual {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(45, 90, 159, 0.15) 0%, rgba(212, 165, 116, 0.05) 100%);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .about-visual::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.2) 0%, transparent 70%);
+            animation: spin 20s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .about-visual::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.5; }
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            background: rgba(26, 58, 110, 0.25);
+            border: 1px solid rgba(212, 165, 116, 0.15);
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .team-member::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(74, 127, 215, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .team-member:hover::before {
+            opacity: 1;
+        }
+
+        .team-member:hover {
+            border-color: var(--gold);
+            background: rgba(26, 58, 110, 0.4);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(74, 127, 215, 0.1);
+        }
+
+        .team-member-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .team-member h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        .team-member .title {
+            color: var(--blue-accent);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .team-member p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin: 1rem 0;
+        }
+
+        .team-member .contact {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 1.5rem;
+        }
+
+        .team-member .contact a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 0.5rem 0;
+        }
+
+        .team-member .contact a:hover {
+            color: var(--gold-light);
+            transform: translateX(5px);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, rgba(45, 90, 159, 0.05) 0%, rgba(212, 165, 116, 0.03) 100%);
+            border-top: 1px solid var(--border);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info {
+            background: rgba(26, 58, 110, 0.25);
+            border: 1px solid rgba(212, 165, 116, 0.15);
+            padding: 3rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item {
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .contact-item::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 0;
+            width: 3px;
+            height: 30px;
+            background: linear-gradient(180deg, var(--gold), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-item:hover::before {
+            opacity: 1;
+        }
+
+        .contact-item h4 {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+
+        .contact-item p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .contact-item a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .contact-item a:hover {
+            color: var(--gold-light);
+            transform: translateX(3px);
+        }
+
+        .contact-form {
+            background: rgba(26, 58, 110, 0.25);
+            border: 1px solid rgba(212, 165, 116, 0.15);
+            padding: 3rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            color: var(--text-primary);
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.4s ease;
+            font-size: 0.95rem;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(212, 165, 116, 0.05);
+            box-shadow: 0 0 0 4px rgba(212, 165, 116, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            color: var(--navy-dark);
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .submit-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(212, 165, 116, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            background: linear-gradient(135deg, rgba(5, 11, 20, 0.8) 0%, rgba(10, 22, 40, 0.8) 100%);
+        }
+
+        .footer-content {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                margin-top: 60px;
+                padding: 2rem 1rem;
+            }
+
+            section {
+                padding: 4rem 1rem;
+            }
+        }
+
+        /* Scroll reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">A.A. GLOBAL</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-subtitle">Professional Excellence</div>
+            <h1>A.A. Global Consultants</h1>
+            <p>Delivering strategic management consulting, healthcare support, and integrated business solutions for organizations across Lagos and beyond.</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Comprehensive solutions tailored to your organization's unique needs and challenges.</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3>Management Consultancy</h3>
+                <p>Strategic and operational consulting services to optimize business performance, streamline processes, and drive sustainable growth.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🏥</div>
+                <h3>Healthcare Support</h3>
+                <p>Comprehensive healthcare advisory, wellness coordination, medical support services, and health programme management for institutions.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🛒</div>
+                <h3>Procurement & Supply</h3>
+                <p>Sourcing, supply chain optimization, and distribution of medical supplies, healthcare products, and office equipment.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">💼</div>
+                <h3>Trading Services</h3>
+                <p>General trading, importation, and exportation of goods, healthcare materials, equipment, and merchandise of every description.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🎓</div>
+                <h3>Training & Development</h3>
+                <p>Professional seminars, workshops, capacity-building initiatives, and awareness programmes in healthcare, management, and administration.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🤝</div>
+                <h3>Outsourcing & Support</h3>
+                <p>Administrative support, logistics coordination, records management, and operational support services for seamless business continuity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title">About Us</h2>
+        
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    <span class="about-highlight">A.A. Global Consultants Limited</span> is a Lagos-based professional services firm registered with Nigeria's Corporate Affairs Commission, specializing in strategic management consulting, healthcare support services, and integrated business solutions.
+                </p>
+                <p>
+                    Founded on principles of professional excellence and client-centric service delivery, we provide comprehensive strategic, operational, administrative, and business support services to organizations in both public and private sectors.
+                </p>
+                <p>
+                    Our expertise spans management consultancy, healthcare coordination, procurement optimization, and business support services. We partner with healthcare institutions, non-governmental organizations, and government agencies to deliver measurable results and sustainable growth.
+                </p>
+                <p>
+                    Based in Ikeja, Lagos, at <span class="about-highlight">Allen Avenue (3rd Floor, Oshopey Plaza)</span>, we are committed to excellence and dedicated to helping our clients navigate complex business challenges with professional insight and strategic acumen.
+                </p>
+            </div>
+            
+            <div>
+                <div style="background: rgba(212, 165, 116, 0.1); border: 1px solid var(--gold); border-radius: 8px; padding: 2rem; margin-top: 0;">
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--gold); margin-bottom: 1.5rem;">By The Numbers</h3>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="font-size: 1.8rem; color: var(--gold); font-weight: 700;">Limited</div>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">Company Structure</div>
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="font-size: 1.8rem; color: var(--gold); font-weight: 700;">₦1.5M</div>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">Registered Capital</div>
+                    </div>
+                    
+                    <div>
+                        <div style="font-size: 1.8rem; color: var(--gold); font-weight: 700;">6+ Areas</div>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">Service Specialization</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <h2 class="section-title">Leadership Team</h2>
+        <p class="section-subtitle">Meet the experienced professionals driving our mission of excellence and innovation.</p>
+        
+        <div class="team-grid">
+            <div class="team-member">
+                <h3>Alfred George Adegboyega</h3>
+                <div class="title">Director & Principal Consultant</div>
+                <p style="color: var(--text-secondary); margin: 1rem 0;">Businessman with extensive experience in strategic consulting, business development, and institutional management.</p>
+                <div class="contact">
+                    <div>📧 Alfred.George@alphafoglnc.com</div>
+                    <div style="margin-top: 0.5rem;">📱 +234 913 5295634</div>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <h3>Suraju Olanrewaju Akinloye</h3>
+                <div class="title">Co-Director & Financial Officer</div>
+                <p style="color: var(--text-secondary); margin: 1rem 0;">Chartered Accountant with deep expertise in financial management, compliance, and organizational governance.</p>
+                <div class="contact">
+                    <div>📧 lanreakinloye2002@gmail.com</div>
+                    <div style="margin-top: 0.5rem;">📱 +234 803 4716642</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">We'd love to hear from you. Reach out to discuss how we can support your organization's growth.</p>
+        
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>📍 Office Address</h4>
+                    <p>
+                        17/19 Allen Avenue<br>
+                        3rd Floor, Oshopey Plaza<br>
+                        Ikeja, Lagos<br>
+                        Nigeria
+                    </p>
+                </div>
+                
+                <div class="contact-item">
+                    <h4>📞 Phone</h4>
+                    <p>
+                        <a href="tel:+2349135295634">+234 913 5295634</a><br>
+                        <a href="tel:+2348034716642">+234 803 4716642</a>
+                    </p>
+                </div>
+                
+                <div class="contact-item">
+                    <h4>✉️ Email</h4>
+                    <p>
+                        <a href="mailto:Alfred.George@alphafoglnc.com">Alfred.George@alphafoglnc.com</a>
+                    </p>
+                </div>
+                
+                <div class="contact-item">
+                    <h4>🕐 Business Hours</h4>
+                    <p>
+                        Monday - Friday: 9:00 AM - 6:00 PM<br>
+                        Saturday: By Appointment<br>
+                        Sunday: Closed
+                    </p>
+                </div>
+            </div>
+            
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company/Organization</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 A.A. Global Consultants Limited. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">Registered in Lagos, Nigeria | RC: 12143193</p>
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                company: document.getElementById('company').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                timestamp: new Date().toLocaleString()
+            };
+            
+            // Log form data (in production, this would be sent to a backend)
+            console.log('Form submitted:', formData);
+            
+            // Show success message
+            alert('Thank you for reaching out! We will get back to you shortly.');
+            event.target.reset();
+        }
+
+        // Smooth scroll behavior for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .team-member, .contact-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
