@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A.A. Global Consultants Limited - Excellence in Consulting</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>A.A. Global Consultants Limited - Strategic Excellence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,33 +13,51 @@
         }
 
         :root {
-            --navy: #0a1628;
-            --navy-dark: #050b14;
-            --sapphire: #1a3a6e;
-            --royal-blue: #2d5a9f;
-            --blue-accent: #4a7fd7;
-            --gold: #d4a574;
-            --gold-light: #e5c49f;
-            --text-primary: #f5f5f5;
-            --text-secondary: #b8c5d6;
-            --border: #1f3a5f;
+            --navy-dark: #0a0e27;
+            --navy-deep: #141b3d;
+            --navy-mid: #1a2451;
+            --sapphire: #2d3f7e;
+            --gold-premium: #d4af37;
+            --gold-light: #e8c547;
+            --rose-accent: #c9767d;
+            --cyan-accent: #00d9ff;
+            --text-primary: #f0f2f5;
+            --text-secondary: #a8b3c1;
+            --text-muted: #7a8494;
+            --border-subtle: #2a3558;
+            --border-accent: #3d4f6f;
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--navy-dark) 0%, #0f1535 50%, var(--navy-deep) 100%);
             color: var(--text-primary);
             line-height: 1.7;
             overflow-x: hidden;
+            letter-spacing: 0.3px;
         }
 
         html {
             scroll-behavior: smooth;
         }
 
-        /* Custom cursor */
-        body {
-            cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="6" fill="%23d4a574"/><circle cx="16" cy="16" r="14" fill="none" stroke="%23d4a574" stroke-width="1.5" opacity="0.5"/></svg>') 16 16, auto;
+        /* Animated background */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(45, 63, 126, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 0%, rgba(0, 217, 255, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
         }
 
         /* Navigation */
@@ -48,17 +66,17 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(5, 11, 20, 0.98);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            padding: 1.5rem 2rem;
+            background: rgba(10, 14, 39, 0.92);
+            backdrop-filter: blur(30px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 1.2rem 2rem;
             animation: slideDown 0.8s ease-out;
         }
 
         @keyframes slideDown {
             from {
                 opacity: 0;
-                transform: translateY(-20px);
+                transform: translateY(-30px);
             }
             to {
                 opacity: 1;
@@ -67,7 +85,7 @@
         }
 
         .nav-container {
-            max-width: 1600px;
+            max-width: 1800px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -75,29 +93,41 @@
         }
 
         .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
             font-weight: 700;
-            letter-spacing: 3px;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            letter-spacing: 4px;
+            background: linear-gradient(135deg, var(--gold-premium) 0%, var(--gold-light) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-transform: uppercase;
+            position: relative;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--gold-premium);
+            opacity: 0.6;
         }
 
         .nav-links {
             display: flex;
-            gap: 3.5rem;
+            gap: 4rem;
             list-style: none;
         }
 
         .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            letter-spacing: 1px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
             position: relative;
             text-transform: uppercase;
             transition: color 0.3s ease;
@@ -106,16 +136,16 @@
         .nav-links a::before {
             content: '';
             position: absolute;
-            bottom: -8px;
+            bottom: -6px;
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, var(--gold), var(--gold-light));
-            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(90deg, var(--gold-premium), var(--gold-light));
+            transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .nav-links a:hover {
-            color: var(--gold);
+            color: var(--gold-light);
         }
 
         .nav-links a:hover::before {
@@ -137,36 +167,36 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: -40%;
-            right: -15%;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(74, 127, 215, 0.15) 0%, transparent 70%);
+            top: -20%;
+            right: -10%;
+            width: 900px;
+            height: 900px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
             border-radius: 50%;
-            animation: orbitFloat 8s ease-in-out infinite;
+            animation: orbitFloat 12s ease-in-out infinite;
             z-index: 0;
         }
 
         .hero::after {
             content: '';
             position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(212, 165, 116, 0.08) 0%, transparent 70%);
+            bottom: -25%;
+            left: -5%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(0, 217, 255, 0.08) 0%, transparent 70%);
             border-radius: 50%;
-            animation: orbitFloat 10s ease-in-out infinite reverse;
+            animation: orbitFloat 14s ease-in-out infinite reverse;
             z-index: 0;
         }
 
         @keyframes orbitFloat {
             0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-40px) scale(1.1); }
+            50% { transform: translateY(-60px) scale(1.15); }
         }
 
         .hero-content {
-            max-width: 1000px;
+            max-width: 1100px;
             text-align: center;
             z-index: 1;
             animation: heroEnter 1.2s ease-out;
@@ -175,7 +205,7 @@
         @keyframes heroEnter {
             from {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateY(60px);
             }
             to {
                 opacity: 1;
@@ -183,25 +213,30 @@
             }
         }
 
-        .hero-subtitle {
-            color: var(--gold);
-            font-size: 1rem;
-            letter-spacing: 4px;
+        .hero-tag {
+            display: inline-block;
+            color: var(--cyan-accent);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
+            margin-bottom: 2rem;
+            font-weight: 700;
             animation: fadeInUp 1s ease-out 0.2s both;
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
         }
 
         .hero h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 5.5rem;
-            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            font-size: 6.5rem;
+            font-weight: 800;
             margin-bottom: 1.5rem;
-            line-height: 1.1;
+            line-height: 1;
             letter-spacing: -2px;
             animation: fadeInUp 1s ease-out 0.4s both;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--gold-light) 100%);
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--gold-light) 50%, var(--gold-premium) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -210,7 +245,7 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -219,32 +254,34 @@
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--text-secondary);
-            margin-bottom: 3rem;
-            max-width: 700px;
+            margin-bottom: 3.5rem;
+            max-width: 750px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.8;
+            line-height: 1.9;
             animation: fadeInUp 1s ease-out 0.6s both;
+            font-weight: 300;
         }
 
         .cta-button {
             display: inline-block;
-            padding: 1.2rem 3rem;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            padding: 1.3rem 3.5rem;
+            background: linear-gradient(135deg, var(--gold-premium) 0%, var(--gold-light) 100%);
             color: var(--navy-dark);
             text-decoration: none;
             font-weight: 700;
-            border-radius: 50px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 60px;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             border: 2px solid transparent;
             font-size: 0.95rem;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             animation: fadeInUp 1s ease-out 0.8s both;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.25);
         }
 
         .cta-button::before {
@@ -254,15 +291,14 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: left 0.4s ease;
+            background: rgba(255, 255, 255, 0.25);
+            transition: left 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             z-index: -1;
         }
 
         .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(212, 165, 116, 0.4);
-            border-color: var(--gold);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.35);
         }
 
         .cta-button:hover::before {
@@ -271,29 +307,18 @@
 
         /* Section Styling */
         section {
-            padding: 6rem 2rem;
-            max-width: 1600px;
+            padding: 7rem 2rem;
+            max-width: 1800px;
             margin: 0 auto;
             position: relative;
-        }
-
-        section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            opacity: 0.3;
+            z-index: 1;
         }
 
         .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 1.2rem;
             margin-top: 0;
             letter-spacing: -1px;
             background: linear-gradient(135deg, var(--text-primary) 0%, var(--gold-light) 100%);
@@ -306,7 +331,7 @@
         @keyframes titleReveal {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -316,37 +341,37 @@
 
         .section-subtitle {
             color: var(--text-secondary);
-            font-size: 1.15rem;
-            margin-bottom: 4rem;
-            max-width: 700px;
-            line-height: 1.8;
+            font-size: 1.2rem;
+            margin-bottom: 4.5rem;
+            max-width: 800px;
+            line-height: 1.85;
             font-weight: 300;
             animation: fadeInUp 1s ease-out 0.2s both;
         }
 
         /* Services Section */
         .services {
-            background: linear-gradient(135deg, rgba(45, 90, 159, 0.05) 0%, rgba(212, 165, 116, 0.03) 100%);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
+            background: linear-gradient(135deg, rgba(45, 63, 126, 0.1) 0%, rgba(212, 175, 55, 0.02) 100%);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
             margin-top: 2rem;
         }
 
         .service-card {
-            background: rgba(26, 58, 110, 0.25);
-            border: 1px solid rgba(212, 165, 116, 0.15);
-            padding: 3rem;
-            border-radius: 12px;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(135deg, rgba(26, 36, 81, 0.4) 0%, rgba(26, 36, 81, 0.2) 100%);
+            border: 1px solid var(--border-accent);
+            padding: 3.5rem;
+            border-radius: 16px;
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
             position: relative;
             overflow: hidden;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
         }
 
         .service-card::before {
@@ -356,10 +381,10 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, var(--gold), var(--gold-light), transparent);
+            background: linear-gradient(90deg, var(--gold-premium), var(--gold-light), var(--cyan-accent));
             transform: scaleX(0);
             transform-origin: left;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .service-card::after {
@@ -367,11 +392,11 @@
             position: absolute;
             top: -50%;
             right: -50%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(74, 127, 215, 0.2) 0%, transparent 70%);
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(0, 217, 255, 0.15) 0%, transparent 70%);
             border-radius: 50%;
-            transition: all 0.6s ease;
+            transition: all 0.7s ease;
             z-index: 0;
         }
 
@@ -382,15 +407,15 @@
         .service-card:hover::after {
             top: -20%;
             right: -20%;
-            width: 400px;
-            height: 400px;
+            width: 450px;
+            height: 450px;
         }
 
         .service-card:hover {
-            border-color: var(--gold);
-            background: rgba(26, 58, 110, 0.4);
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(74, 127, 215, 0.15);
+            border-color: var(--gold-premium);
+            background: linear-gradient(135deg, rgba(45, 63, 126, 0.3) 0%, rgba(26, 36, 81, 0.3) 100%);
+            transform: translateY(-15px);
+            box-shadow: 0 30px 70px rgba(212, 175, 55, 0.2);
         }
 
         .service-content {
@@ -399,68 +424,69 @@
         }
 
         .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
+            font-size: 3.5rem;
+            margin-bottom: 1.8rem;
             display: block;
-            animation: float 3s ease-in-out infinite;
+            animation: float 3.5s ease-in-out infinite;
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-15px); }
         }
 
         .service-card h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--gold);
-            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            margin-bottom: 1.2rem;
+            color: var(--gold-premium);
+            font-weight: 700;
         }
 
         .service-card p {
             color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.8;
+            font-size: 0.98rem;
+            line-height: 1.85;
+            font-weight: 300;
         }
 
         /* About Section */
         .about {
-            border-top: 1px solid var(--border);
+            border-top: 1px solid var(--border-subtle);
         }
 
         .about-content {
             display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 5rem;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 6rem;
             align-items: center;
             margin-top: 3rem;
         }
 
         .about-text p {
             color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.9;
-            font-size: 1.05rem;
+            margin-bottom: 2.2rem;
+            line-height: 2;
+            font-size: 1.08rem;
             font-weight: 300;
         }
 
         .about-highlight {
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            background: linear-gradient(135deg, var(--gold-premium), var(--gold-light));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .about-visual {
             position: relative;
-            height: 400px;
-            background: linear-gradient(135deg, rgba(45, 90, 159, 0.15) 0%, rgba(212, 165, 116, 0.05) 100%);
-            border: 1px solid var(--border);
-            border-radius: 12px;
+            height: 450px;
+            background: linear-gradient(135deg, rgba(45, 63, 126, 0.15) 0%, rgba(0, 217, 255, 0.08) 100%);
+            border: 1px solid var(--border-accent);
+            border-radius: 16px;
             overflow: hidden;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
         }
 
         .about-visual::before {
@@ -468,10 +494,10 @@
             position: absolute;
             top: -50%;
             right: -50%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(212, 165, 116, 0.2) 0%, transparent 70%);
-            animation: spin 20s linear infinite;
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, transparent 70%);
+            animation: spin 25s linear infinite;
         }
 
         @keyframes spin {
@@ -485,45 +511,52 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 150px;
-            height: 150px;
-            border: 2px solid var(--gold);
+            width: 180px;
+            height: 180px;
+            border: 3px solid var(--gold-premium);
             border-radius: 50%;
-            animation: pulse 3s ease-in-out infinite;
+            animation: pulse 4s ease-in-out infinite;
+            box-shadow: 0 0 60px rgba(212, 175, 55, 0.2);
         }
 
         @keyframes pulse {
             0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.4; }
         }
 
         /* Team Section */
+        .team {
+            background: linear-gradient(135deg, rgba(45, 63, 126, 0.08) 0%, rgba(0, 217, 255, 0.02) 100%);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 3rem;
             margin-top: 2rem;
         }
 
         .team-member {
-            background: rgba(26, 58, 110, 0.25);
-            border: 1px solid rgba(212, 165, 116, 0.15);
-            padding: 2.5rem;
-            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(26, 36, 81, 0.4) 0%, rgba(26, 36, 81, 0.2) 100%);
+            border: 1px solid var(--border-accent);
+            padding: 3rem;
+            border-radius: 16px;
             text-align: center;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
             position: relative;
             overflow: hidden;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
         }
 
         .team-member::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at 30% 30%, rgba(74, 127, 215, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.6s ease;
         }
 
         .team-member:hover::before {
@@ -531,10 +564,10 @@
         }
 
         .team-member:hover {
-            border-color: var(--gold);
-            background: rgba(26, 58, 110, 0.4);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(74, 127, 215, 0.1);
+            border-color: var(--gold-premium);
+            background: linear-gradient(135deg, rgba(45, 63, 126, 0.3) 0%, rgba(26, 36, 81, 0.3) 100%);
+            transform: translateY(-12px);
+            box-shadow: 0 30px 70px rgba(212, 175, 55, 0.2);
         }
 
         .team-member-content {
@@ -543,85 +576,89 @@
         }
 
         .team-member h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.6rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.8rem;
+            background: linear-gradient(135deg, var(--gold-premium), var(--gold-light));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .team-member .title {
-            color: var(--blue-accent);
+            color: var(--cyan-accent);
             font-size: 0.95rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
 
         .team-member p {
             color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.7;
-            margin: 1rem 0;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin: 1.2rem 0;
+            font-weight: 300;
         }
 
         .team-member .contact {
             font-size: 0.9rem;
             color: var(--text-secondary);
-            margin-top: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .team-member .contact div {
+            margin: 0.7rem 0;
         }
 
         .team-member .contact a {
-            color: var(--gold);
+            color: var(--gold-premium);
             text-decoration: none;
             transition: all 0.3s ease;
-            display: block;
-            margin: 0.5rem 0;
+            font-weight: 600;
         }
 
         .team-member .contact a:hover {
             color: var(--gold-light);
-            transform: translateX(5px);
+            text-decoration: underline;
         }
 
         /* Contact Section */
         .contact {
-            background: linear-gradient(135deg, rgba(45, 90, 159, 0.05) 0%, rgba(212, 165, 116, 0.03) 100%);
-            border-top: 1px solid var(--border);
+            border-top: 1px solid var(--border-subtle);
         }
 
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3.5rem;
+            gap: 4rem;
             margin-top: 2rem;
         }
 
         .contact-info {
-            background: rgba(26, 58, 110, 0.25);
-            border: 1px solid rgba(212, 165, 116, 0.15);
-            padding: 3rem;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, rgba(26, 36, 81, 0.4) 0%, rgba(26, 36, 81, 0.2) 100%);
+            border: 1px solid var(--border-accent);
+            padding: 3.5rem;
+            border-radius: 16px;
+            backdrop-filter: blur(15px);
         }
 
         .contact-item {
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
             position: relative;
+            padding-left: 2rem;
         }
 
         .contact-item::before {
             content: '';
             position: absolute;
-            left: -3rem;
+            left: 0;
             top: 0;
             width: 3px;
-            height: 30px;
-            background: linear-gradient(180deg, var(--gold), transparent);
+            height: 25px;
+            background: linear-gradient(180deg, var(--gold-premium), transparent);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -631,98 +668,99 @@
         }
 
         .contact-item h4 {
-            color: var(--gold);
+            color: var(--gold-premium);
             font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
+            margin-bottom: 0.9rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
         }
 
         .contact-item p {
             color: var(--text-secondary);
-            line-height: 1.8;
+            line-height: 1.9;
+            font-size: 0.98rem;
         }
 
         .contact-item a {
-            color: var(--gold);
+            color: var(--cyan-accent);
             text-decoration: none;
             transition: all 0.3s ease;
-            display: inline-block;
+            font-weight: 600;
         }
 
         .contact-item a:hover {
             color: var(--gold-light);
-            transform: translateX(3px);
         }
 
         .contact-form {
-            background: rgba(26, 58, 110, 0.25);
-            border: 1px solid rgba(212, 165, 116, 0.15);
-            padding: 3rem;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, rgba(26, 36, 81, 0.4) 0%, rgba(26, 36, 81, 0.2) 100%);
+            border: 1px solid var(--border-accent);
+            padding: 3.5rem;
+            border-radius: 16px;
+            backdrop-filter: blur(15px);
         }
 
         .form-group {
-            margin-bottom: 2rem;
+            margin-bottom: 2.2rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.8rem;
-            color: var(--gold);
-            font-weight: 600;
+            margin-bottom: 0.9rem;
+            color: var(--gold-premium);
+            font-weight: 700;
             font-size: 0.95rem;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 1rem;
+            padding: 1.1rem;
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(212, 165, 116, 0.2);
+            border: 1.5px solid var(--border-accent);
             color: var(--text-primary);
-            border-radius: 8px;
-            font-family: 'Montserrat', sans-serif;
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
             transition: all 0.4s ease;
-            font-size: 0.95rem;
+            font-size: 0.98rem;
         }
 
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-            color: var(--text-secondary);
+            color: var(--text-muted);
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--gold);
-            background: rgba(212, 165, 116, 0.05);
-            box-shadow: 0 0 0 4px rgba(212, 165, 116, 0.1);
+            border-color: var(--gold-premium);
+            background: rgba(212, 175, 55, 0.08);
+            box-shadow: 0 0 0 5px rgba(212, 175, 55, 0.15);
         }
 
         .form-group textarea {
             resize: vertical;
-            min-height: 140px;
+            min-height: 160px;
         }
 
         .submit-btn {
             width: 100%;
-            padding: 1.2rem;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            padding: 1.3rem;
+            background: linear-gradient(135deg, var(--gold-premium) 0%, var(--gold-light) 100%);
             color: var(--navy-dark);
             border: none;
-            border-radius: 50px;
+            border-radius: 60px;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             font-size: 0.95rem;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.25);
         }
 
         .submit-btn::before {
@@ -744,43 +782,180 @@
         }
 
         .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 50px rgba(212, 165, 116, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.35);
+        }
+
+        /* Privacy Policy Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-mid) 100%);
+            margin: 5% auto;
+            padding: 3.5rem;
+            border: 1px solid var(--border-accent);
+            border-radius: 16px;
+            width: 90%;
+            max-width: 900px;
+            max-height: 80vh;
+            overflow-y: auto;
+            animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close {
+            color: var(--text-secondary);
+            float: right;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: var(--gold-premium);
+        }
+
+        .modal h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--gold-premium);
+            margin-bottom: 2rem;
+            margin-top: 1rem;
+        }
+
+        .modal h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--gold-light);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal p {
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .modal ul {
+            color: var(--text-secondary);
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal ul li {
+            margin-bottom: 0.8rem;
+            line-height: 1.8;
         }
 
         /* Footer */
         footer {
-            border-top: 1px solid var(--border);
-            padding: 3rem 2rem;
+            border-top: 1px solid var(--border-subtle);
+            padding: 3.5rem 2rem;
             text-align: center;
             color: var(--text-secondary);
             font-size: 0.9rem;
-            background: linear-gradient(135deg, rgba(5, 11, 20, 0.8) 0%, rgba(10, 22, 40, 0.8) 100%);
+            background: linear-gradient(135deg, rgba(10, 14, 39, 0.9) 0%, rgba(20, 27, 61, 0.9) 100%);
+            font-weight: 300;
         }
 
         .footer-content {
-            max-width: 1600px;
+            max-width: 1800px;
             margin: 0 auto;
         }
 
         footer p {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links {
+            margin-top: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--gold-premium);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            transition: color 0.3s ease;
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-light);
+            text-decoration: underline;
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .hero h1 {
-                font-size: 3rem;
+                font-size: 4.5rem;
             }
 
             .section-title {
-                font-size: 2.5rem;
+                font-size: 3.5rem;
             }
 
             .about-content,
             .contact-content {
                 grid-template-columns: 1fr;
-                gap: 3rem;
+                gap: 3.5rem;
+            }
+
+            .about-visual {
+                height: 350px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+
+            .section-title {
+                font-size: 2.8rem;
+            }
+
+            .hero-tag {
+                font-size: 0.8rem;
+                padding: 0.7rem 1.5rem;
+            }
+
+            .services-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
             }
 
             .nav-links {
@@ -793,15 +968,21 @@
             }
 
             section {
-                padding: 4rem 1rem;
+                padding: 5rem 1rem;
+            }
+
+            .modal-content {
+                width: 95%;
+                padding: 2rem;
+                margin: 20% auto;
             }
         }
 
         /* Scroll reveal animations */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(40px);
+            transition: all 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .reveal.active {
@@ -828,7 +1009,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <div class="hero-subtitle">Professional Excellence</div>
+            <div class="hero-tag">Strategic Excellence Redefined</div>
             <h1>A.A. Global Consultants</h1>
             <p>Delivering strategic management consulting, healthcare support, and integrated business solutions for organizations across Lagos and beyond.</p>
             <a href="#contact" class="cta-button">Get In Touch</a>
@@ -843,38 +1024,50 @@
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">📋</div>
-                <h3>Management Consultancy</h3>
-                <p>Strategic and operational consulting services to optimize business performance, streamline processes, and drive sustainable growth.</p>
+                <div class="service-content">
+                    <h3>Management Consultancy</h3>
+                    <p>Strategic and operational consulting services to optimize business performance, streamline processes, and drive sustainable growth.</p>
+                </div>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">🏥</div>
-                <h3>Healthcare Support</h3>
-                <p>Comprehensive healthcare advisory, wellness coordination, medical support services, and health programme management for institutions.</p>
+                <div class="service-content">
+                    <h3>Healthcare Support</h3>
+                    <p>Comprehensive healthcare advisory, wellness coordination, medical support services, and health programme management for institutions.</p>
+                </div>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">🛒</div>
-                <h3>Procurement & Supply</h3>
-                <p>Sourcing, supply chain optimization, and distribution of medical supplies, healthcare products, and office equipment.</p>
+                <div class="service-content">
+                    <h3>Procurement & Supply</h3>
+                    <p>Sourcing, supply chain optimization, and distribution of medical supplies, healthcare products, and office equipment.</p>
+                </div>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">💼</div>
-                <h3>Trading Services</h3>
-                <p>General trading, importation, and exportation of goods, healthcare materials, equipment, and merchandise of every description.</p>
+                <div class="service-content">
+                    <h3>Trading Services</h3>
+                    <p>General trading, importation, and exportation of goods, healthcare materials, equipment, and merchandise of every description.</p>
+                </div>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">🎓</div>
-                <h3>Training & Development</h3>
-                <p>Professional seminars, workshops, capacity-building initiatives, and awareness programmes in healthcare, management, and administration.</p>
+                <div class="service-content">
+                    <h3>Training & Development</h3>
+                    <p>Professional seminars, workshops, capacity-building initiatives, and awareness programmes in healthcare, management, and administration.</p>
+                </div>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">🤝</div>
-                <h3>Outsourcing & Support</h3>
-                <p>Administrative support, logistics coordination, records management, and operational support services for seamless business continuity.</p>
+                <div class="service-content">
+                    <h3>Outsourcing & Support</h3>
+                    <p>Administrative support, logistics coordination, records management, and operational support services for seamless business continuity.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -899,26 +1092,7 @@
                 </p>
             </div>
             
-            <div>
-                <div style="background: rgba(212, 165, 116, 0.1); border: 1px solid var(--gold); border-radius: 8px; padding: 2rem; margin-top: 0;">
-                    <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--gold); margin-bottom: 1.5rem;">By The Numbers</h3>
-                    
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="font-size: 1.8rem; color: var(--gold); font-weight: 700;">Limited</div>
-                        <div style="color: var(--text-secondary); font-size: 0.9rem;">Company Structure</div>
-                    </div>
-                    
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="font-size: 1.8rem; color: var(--gold); font-weight: 700;">₦1.5M</div>
-                        <div style="color: var(--text-secondary); font-size: 0.9rem;">Registered Capital</div>
-                    </div>
-                    
-                    <div>
-                        <div style="font-size: 1.8rem; color: var(--gold); font-weight: 700;">6+ Areas</div>
-                        <div style="color: var(--text-secondary); font-size: 0.9rem;">Service Specialization</div>
-                    </div>
-                </div>
-            </div>
+            <div class="about-visual"></div>
         </div>
     </section>
 
@@ -929,22 +1103,38 @@
         
         <div class="team-grid">
             <div class="team-member">
-                <h3>Alfred George Adegboyega</h3>
-                <div class="title">Managing Director</div>
-                <p style="color: var(--text-secondary); margin: 1rem 0;">Businessman with extensive experience in strategic consulting, business development, and institutional management.</p>
-                <div class="contact">
-                    <div>📧 Alfred.George@alphafoglnc.com</div>
-                    <div style="margin-top: 0.5rem;">📱 +234 913 5295634</div>
+                <div class="team-member-content">
+                    <h3>Alfred George Adegboyega</h3>
+                    <div class="title">Managing Director</div>
+                    <p>Businessman with extensive experience in strategic consulting, business development, and institutional management.</p>
+                    <div class="contact">
+                        <div>📧 Alfred.George@alphafoglnc.com</div>
+                        <div>📱 +234 913 5295634</div>
+                    </div>
                 </div>
             </div>
             
             <div class="team-member">
-                <h3>Suraju Olanrewaju Akinloye</h3>
-                <div class="title">Chairman</div>
-                <p style="color: var(--text-secondary); margin: 1rem 0;">Chartered Accountant with deep expertise in financial management, compliance, and organizational governance.</p>
-                <div class="contact">
-                    <div>📧 lanreakinloye2002@gmail.com</div>
-                    <div style="margin-top: 0.5rem;">📱 +234 803 4716642</div>
+                <div class="team-member-content">
+                    <h3>Suraju Olanrewaju Akinloye</h3>
+                    <div class="title">Chairman</div>
+                    <p>Chartered Accountant with deep expertise in financial management, compliance, and organizational governance.</p>
+                    <div class="contact">
+                        <div>📧 lanreakinloye2002@gmail.com</div>
+                        <div>📱 +234 803 4716642</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="team-member-content">
+                    <h3>Aderonke Roni Allen</h3>
+                    <div class="title">Director - Clinical Project Management</div>
+                    <p>Specialist in clinical trial operations, regulatory compliance, and managing cross-functional trial teams.</p>
+                    <div class="contact">
+                        <div>📧 aderonke.allen@alphafoglnc.com</div>
+                        <div>📱 Available upon request</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1028,8 +1218,120 @@
         <div class="footer-content">
             <p>&copy; 2024 A.A. Global Consultants Limited. All rights reserved.</p>
             <p style="margin-top: 0.5rem; font-size: 0.85rem;">Registered in Lagos, Nigeria | RC: 12143193</p>
+            <div class="footer-links">
+                <a href="#privacy" onclick="openPrivacyPolicy(event)">Privacy Policy</a>
+            </div>
         </div>
     </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePrivacyPolicy()">&times;</span>
+            <h2>Privacy Policy</h2>
+            
+            <h3>1. Introduction</h3>
+            <p>
+                A.A. Global Consultants Limited ("we," "us," "our," or "Company") is committed to protecting your privacy and ensuring you have a positive experience on our website and in our services. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and engage with our services.
+            </p>
+
+            <h3>2. Information We Collect</h3>
+            <p>We may collect information about you in a variety of ways. The information we may collect on the site includes:</p>
+            <ul>
+                <li><strong>Personal Data:</strong> Name, email address, phone number, company name, job title, and any other information you voluntarily provide through our contact forms.</li>
+                <li><strong>Technical Data:</strong> IP address, browser type, device information, pages visited, time and date of visit, and other usage data collected through cookies and similar technologies.</li>
+                <li><strong>Professional Information:</strong> Information about your organization, industry, and business needs shared during consultation.</li>
+            </ul>
+
+            <h3>3. How We Use Your Information</h3>
+            <p>We use the information we collect for the following purposes:</p>
+            <ul>
+                <li>To respond to your inquiries and provide requested services</li>
+                <li>To send you marketing communications and updates about our services (with your consent)</li>
+                <li>To improve our website functionality and user experience</li>
+                <li>To comply with legal obligations and regulatory requirements</li>
+                <li>To prevent fraud and ensure security of our systems</li>
+                <li>To analyze usage patterns and improve our service delivery</li>
+            </ul>
+
+            <h3>4. Data Sharing and Disclosure</h3>
+            <p>
+                We do not sell, trade, or rent your personal information to third parties. However, we may share your information with:
+            </p>
+            <ul>
+                <li>Service providers who assist us in operating our website and conducting our business (subject to confidentiality agreements)</li>
+                <li>Law enforcement or other government agencies when required by law</li>
+                <li>Our team members who need access to your information to provide services</li>
+            </ul>
+
+            <h3>5. Data Security</h3>
+            <p>
+                We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet is 100% secure. While we strive to protect your information, we cannot guarantee absolute security.
+            </p>
+
+            <h3>6. Your Rights</h3>
+            <p>Depending on your location, you may have the following rights:</p>
+            <ul>
+                <li>The right to access your personal data</li>
+                <li>The right to correct inaccurate data</li>
+                <li>The right to request deletion of your data</li>
+                <li>The right to restrict processing of your data</li>
+                <li>The right to withdraw consent at any time</li>
+                <li>The right to lodge a complaint with data protection authorities</li>
+            </ul>
+
+            <h3>7. Cookies and Tracking Technologies</h3>
+            <p>
+                Our website may use cookies and similar tracking technologies to enhance your experience. These technologies help us remember your preferences and understand how you use our site. You can control cookie settings through your browser preferences.
+            </p>
+
+            <h3>8. Third-Party Links</h3>
+            <p>
+                Our website may contain links to third-party websites. This Privacy Policy applies only to our website. We are not responsible for the privacy practices of external websites. Please review their privacy policies before providing any information.
+            </p>
+
+            <h3>9. Children's Privacy</h3>
+            <p>
+                Our services are not directed to individuals under 18 years of age. We do not knowingly collect personal information from children. If we become aware that a child has provided us with personal information, we will take steps to delete such information and terminate the child's account.
+            </p>
+
+            <h3>10. Data Retention</h3>
+            <p>
+                We retain your personal information for as long as necessary to fulfill the purposes for which it was collected or as required by law. When information is no longer needed, we will securely delete or anonymize it.
+            </p>
+
+            <h3>11. International Data Transfers</h3>
+            <p>
+                Your information may be processed in Nigeria and may be transferred to, stored in, and processed in other countries. By using our services, you consent to the transfer of your information to countries outside your country of residence.
+            </p>
+
+            <h3>12. Changes to This Privacy Policy</h3>
+            <p>
+                We may update this Privacy Policy periodically to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of material changes by updating the "Last Updated" date and, where appropriate, by providing additional notice on our website.
+            </p>
+
+            <h3>13. Contact Us</h3>
+            <p>
+                If you have questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us at:
+            </p>
+            <p>
+                <strong>A.A. Global Consultants Limited</strong><br>
+                17/19 Allen Avenue, 3rd Floor, Oshopey Plaza<br>
+                Ikeja, Lagos, Nigeria<br>
+                📧 Alfred.George@alphafoglnc.com<br>
+                📱 +234 913 5295634
+            </p>
+
+            <h3>14. Governing Law</h3>
+            <p>
+                This Privacy Policy is governed by the laws of the Federal Republic of Nigeria. Any disputes arising under this policy shall be subject to the exclusive jurisdiction of Nigerian courts.
+            </p>
+
+            <p style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle); font-size: 0.85rem; color: var(--text-muted);">
+                <strong>Last Updated:</strong> January 2024
+            </p>
+        </div>
+    </div>
 
     <script>
         function handleSubmit(event) {
@@ -1044,21 +1346,40 @@
                 timestamp: new Date().toLocaleString()
             };
             
-            // Log form data (in production, this would be sent to a backend)
             console.log('Form submitted:', formData);
-            
-            // Show success message
             alert('Thank you for reaching out! We will get back to you shortly.');
             event.target.reset();
+        }
+
+        // Privacy Policy Modal
+        function openPrivacyPolicy(event) {
+            event.preventDefault();
+            document.getElementById('privacyModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePrivacyPolicy() {
+            document.getElementById('privacyModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('privacyModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
         }
 
         // Smooth scroll behavior for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+                if (this.getAttribute('href') !== '#privacy') {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
                 }
             });
         });
@@ -1072,16 +1393,13 @@
         const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('active');
                 }
             });
         }, observerOptions);
 
         document.querySelectorAll('.service-card, .team-member, .contact-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            el.classList.add('reveal');
             observer.observe(el);
         });
     </script>
